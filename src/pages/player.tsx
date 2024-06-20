@@ -12,7 +12,7 @@ export function Player() {
   const { currentLesson } = useCurrentLesson()
 
   useEffect(() => {
-    document.title = `Assistindo: ${currentLesson.title}`
+    document.title = `Aula: ${currentLesson.title}`
   }, [currentLesson])
 
   return (
