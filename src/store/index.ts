@@ -1,5 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { type TypedUseSelectorHook, useSelector } from 'react-redux'
+import {
+  type TypedUseSelectorHook,
+  useSelector,
+  useDispatch,
+} from 'react-redux'
 
 import { playerSlice } from './slices/player'
 
@@ -20,5 +24,10 @@ export const store = configureStore({
 
 // Retorna o tipo do retorno da função getState do store.
 export type RootState = ReturnType<typeof store.getState>
+
+export type AppDispatch = typeof store.dispatch
+
 // useAppSelector => criando tipagem para o useSelector entender as propriedades do store.
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+
+export const useAppDispatch: () => AppDispatch = useDispatch

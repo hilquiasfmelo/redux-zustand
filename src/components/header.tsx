@@ -6,6 +6,10 @@ export function Header() {
   // Busca qual é a aula ativa.
   const { currentModule, currentLesson } = useCurrentLesson()
 
+  if (!currentModule || !currentLesson) {
+    return null
+  }
+
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-col gap-1">
